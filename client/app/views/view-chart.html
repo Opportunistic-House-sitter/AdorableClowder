@@ -1,0 +1,63 @@
+<!-- remember to put something bootstrappy here -->
+<!DOCTYPE HTML>
+<html>
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.js"></script>
+</head>
+<body>
+<div>
+  <!-- <div ng-controller="chartController as chart"> -->
+  <div>
+    <canvas id="myChart" width="400" height="400"></canvas>
+    <div id="legendDiv"></div>
+  </div>
+</div>
+  <script>
+    // data for chart
+    var datasets = [
+    {
+        value: 300,
+        color:"#F7464A",
+        highlight: "#FF5A5E",
+        label: "Javascript"
+    },
+    {
+        value: 50,
+        color: "#46BFBD",
+        highlight: "#5AD3D1",
+        label: "Morse Code"
+    },
+    {
+        value: 100,
+        color: "#FDB45C",
+        highlight: "#FFC870",
+        label: "Juggling"
+    }
+  ];
+
+  // options for chart
+  var pieOptions = {
+     percentageInnerCutout : 50,
+     animationSteps : 100,
+     animateRotate : true,
+     animationEasing : "easeInSine",
+     animateScale : true,
+     segmentStrokeColor : "#fff",
+     legendTemplate : '<ul>'
+                  +'<% for (var i=0; i<datasets.length; i++) { %>'
+                    +'<li>'
+                    +'<span style=\"background-color:<%=datasets[i].color%>\"></span>'
+                    +'<% if (datasets[i].label) { %><%= datasets[i].label %><% } %>'
+                  +'</li>'
+                +'<% } %>'
+              +'</ul>'
+};
+  // get context of chart for Chart.js
+  var ctx = document.getElementById("myChart").getContext("2d");
+
+  // instantiate new Chart object
+  var myPieChart = new Chart(ctx).Pie(datasets, pieOptions);
+  document.getElementById("legendDiv").innerHTML = myPieChart.generateLegend();
+  </script>
+</body>
+</html>
