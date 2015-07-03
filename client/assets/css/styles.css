@@ -6848,3 +6848,23 @@ button.close {
 people-box .panel {
   margin-top: 25px;
 }
+.linkedinconnect {
+  height: 40px;
+  width: 235px;
+  border-radius: 25px;
+  border: 1px solid black;
+}
+#choice {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.formfields input {
+  height: 40px;
+  width: 235px;
+}
+.blackline {
+  height: 2px;
+  width: 100px;
+  display: inline-block;
+  border-bottom: 1px solid black;
+}
