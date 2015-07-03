@@ -171,23 +171,65 @@ header {
   .linkedinconnect {
     height: 40px;
     width: 235px;
-    border-radius: 25px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    border-radius: 3px;
     border: 1px solid black;
   }
   
-  #choice {
+  .choice {
     margin-left: 5px;
     margin-right: 5px;
-  }  
+  }
+
+  ::-webkit-input-placeholder {
+    font-weight:bold;
+  }
+  
 
   .formfields input{
+    color: black;
     height: 40px;
     width: 235px;
+    margin-top: 3px;
+    border-radius: 3px;
+    border: 1px solid black;
+  }
+
+  .choiceblock{
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  .login{
+    .btn{
+      background-color: @orange;
+    }
+    .btn-primary{
+      border-color:black;
+      color: @gray-lighter;
+      &:hover {
+        background-color: darken(@orange, 5%);
+      }
+    }
+  }  
+
+  .signup{
+    .btn{
+      background-color: @orange;
+    }
+    .btn-primary{
+      border-color:black;
+      color: @gray-lighter;
+      &:hover {
+        background-color: darken(@orange, 5%);
+      }
+    }
   }
 
   .blackline {
    height: 2px;
    width: 100px;
    display: inline-block;
-   border-bottom: 1px solid black;
+   border-bottom: 2px solid @orange;
   }

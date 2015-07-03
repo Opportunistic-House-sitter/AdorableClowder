@@ -6893,20 +6893,53 @@ people-box .panel {
 .linkedinconnect {
   height: 40px;
   width: 235px;
-  border-radius: 25px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  border-radius: 3px;
   border: 1px solid black;
 }
-#choice {
+.choice {
   margin-left: 5px;
   margin-right: 5px;
 }
+::-webkit-input-placeholder {
+  font-weight: bold;
+}
 .formfields input {
+  color: black;
   height: 40px;
   width: 235px;
+  margin-top: 3px;
+  border-radius: 3px;
+  border: 1px solid black;
+}
+.choiceblock {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.login .btn {
+  background-color: #fa8b60;
+}
+.login .btn-primary {
+  border-color: black;
+  color: #eeeeee;
+}
+.login .btn-primary:hover {
+  background-color: #f97947;
+}
+.signup .btn {
+  background-color: #fa8b60;
+}
+.signup .btn-primary {
+  border-color: black;
+  color: #eeeeee;
+}
+.signup .btn-primary:hover {
+  background-color: #f97947;
 }
 .blackline {
   height: 2px;
   width: 100px;
   display: inline-block;
-  border-bottom: 1px solid black;
+  border-bottom: 2px solid #fa8b60;
 }
