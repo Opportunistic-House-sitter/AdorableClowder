@@ -2,7 +2,7 @@
 
   <h4 ng-hide="subject.changesSaved">Subject preferences saved.</h4>
   <div class="row">
-		
+
     <div class="wants col-md-6">
 			<h2>I want to learn:</h2>
         <div ng-repeat="category in subject.categories">
@@ -24,14 +24,14 @@
     </div>
 
   </div> <!-- row -->
-		
-		
-  <div class="row">	
+
+
+  <div class="row">
 
     <div class="col-md-6">
-  		<form class="form-inline" ng-submit="subject.toggleWant(customWant, subject.selectedWantCategory)">
-  		  <div class="form-group">
-        <input type="text" ng-model="customWant" placeholder="Add skill to learn">
+  		<form class="form-inline" ng-controller="typeAheadController as taCtrl" ng-submit="subject.toggleWant(customWant, subject.selectedWantCategory)">
+        <div class="form-group">
+        <input type="text" ng-model="customWant" typeahead="language for language in taCtrl.allSubjects | filter:$viewValue" placeholder="Add skill to learn">
         </div>
   		  <div class="form-group btn-group">
   		    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ subject.selectedWantCategory }}<span class="caret"></span></button>
@@ -44,9 +44,9 @@
     </div>
 
     <div class="col-md-6">
-      <form class="form-inline" ng-submit="subject.toggleOffer(customOffer, subject.selectedOfferCategory)">
+      <form class="form-inline" ng-controller="typeAheadController as taCtrl2" ng-submit="subject.toggleOffer(customOffer, subject.selectedOfferCategory)">
         <div class="form-group">
-        <input type="text" ng-model="customOffer" placeholder="Add skill to teach">
+        <input type="text" ng-model="customOffer" typeahead="language for language in taCtrl2.allSubjects | filter:$viewValue" placeholder="Add skill to teach">
         </div>
         <div class="form-group btn-group">
           <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ subject.selectedOfferCategory }}<span class="caret"></span></button>
@@ -67,7 +67,6 @@
   </div>
 
 </div> <!-- container -->
-	
 
 
-  
+
