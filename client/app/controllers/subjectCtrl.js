@@ -60,6 +60,14 @@ angular.module('subjectCtrl', [])
       'Business': ["Money Laundering", "Accounting", "Financial Advice"],
       'Craft and Design': ["Woodworking", "Clay Pottery", "Graphic Design"]
     };
+
+    vm.hasWant = function(category){
+      return vm.wantsObj[category].length > 0 ? true : false;
+    };
+  
+    vm.hasOffer = function(category){
+      return vm.offersObj[category].length > 0 ? true : false;
+    };
     
     // Selects category from dropdown menu and displays the category to submit
     vm.selectedWantCategory = "category";

@@ -6,7 +6,7 @@
     <div class="wants col-md-6">
 			<h2>I want to learn:</h2>
         <div ng-repeat="category in subject.categories">
-          <h4>{{ category }}:</h4>
+          <h4><span ng-show="subject.hasWant(category)">{{ category }}:</span></h4>
             <a class="want-button btn btn-primary" href="#" ng-repeat="want in subject.wantsObj[category]" ng-click="subject.toggleWant(want, category)">{{ want.skill }}
               <span class="glyphicon glyphicon-remove"></span>
             </a>
@@ -16,7 +16,7 @@
     <div class="offers col-md-6">
       <h2>I'm offering to teach:</h2>
         <div ng-repeat="category in subject.categories">
-          <h4>{{ category }}:</h4>
+          <h4><span ng-show="subject.hasOffer(category)">{{ category }}:</span></h4>
             <a class="offer-button btn btn-primary" href="#" ng-repeat="offer in subject.offersObj[category]" ng-click="subject.toggleOffer(offer, category)"> {{ offer.skill }}
               <span class="glyphicon glyphicon-remove"></span>
             </a>
