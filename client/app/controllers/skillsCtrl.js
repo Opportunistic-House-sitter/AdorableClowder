@@ -37,8 +37,8 @@ angular.module('skillsCtrl', [])
 	 }
  	}
 
- 
- // populates the categories drop down. 
+
+ // populates the categories drop down.
  // when a category is selected, the button updates
  // to the selected category
  vm.sampleCategories = ["language", "technology", "sports", "knowledge", "wild", "business", "craftanddesign"];
@@ -50,6 +50,7 @@ angular.module('skillsCtrl', [])
 
 // Removes or adds a want
   vm.toggleWant = function(want){
+    console.log("want: ", want);
     var index = vm.user.want.indexOf(want);
     if(index > -1){
       vm.user.want.splice(index, 1);

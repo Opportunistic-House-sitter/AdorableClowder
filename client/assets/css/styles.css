@@ -1082,7 +1082,7 @@ body {
   font-family: Raleway, Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
-  color: #eeeeee;
+  color: #222222;
   background-color: #3f2860;
 }
 input,
@@ -2903,7 +2903,7 @@ select[multiple].input-lg {
   display: block;
   margin-top: 5px;
   margin-bottom: 10px;
-  color: #ffffff;
+  color: #626262;
 }
 @media (min-width: 768px) {
   .form-inline .form-group {
@@ -4643,13 +4643,13 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 }
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:focus {
-  color: #080808;
+  color: #ffffff;
   background-color: transparent;
 }
 .navbar-inverse .navbar-nav > .active > a,
 .navbar-inverse .navbar-nav > .active > a:hover,
 .navbar-inverse .navbar-nav > .active > a:focus {
-  color: #080808;
+  color: #ffffff;
   background-color: #080808;
 }
 .navbar-inverse .navbar-nav > .disabled > a,
@@ -4676,7 +4676,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 .navbar-inverse .navbar-nav > .open > a:hover,
 .navbar-inverse .navbar-nav > .open > a:focus {
   background-color: #080808;
-  color: #080808;
+  color: #ffffff;
 }
 @media (max-width: 767px) {
   .navbar-inverse .navbar-nav .open .dropdown-menu > .dropdown-header {
@@ -4690,13 +4690,13 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   }
   .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover,
   .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus {
-    color: #080808;
+    color: #ffffff;
     background-color: transparent;
   }
   .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a,
   .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:hover,
   .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:focus {
-    color: #080808;
+    color: #ffffff;
     background-color: #080808;
   }
   .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a,
@@ -4710,14 +4710,14 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   color: #9d9d9d;
 }
 .navbar-inverse .navbar-link:hover {
-  color: #080808;
+  color: #ffffff;
 }
 .navbar-inverse .btn-link {
   color: #9d9d9d;
 }
 .navbar-inverse .btn-link:hover,
 .navbar-inverse .btn-link:focus {
-  color: #080808;
+  color: #ffffff;
 }
 .navbar-inverse .btn-link[disabled]:hover,
 fieldset[disabled] .navbar-inverse .btn-link:hover,
@@ -5055,7 +5055,7 @@ a.thumbnail.active {
 }
 .thumbnail .caption {
   padding: 9px;
-  color: #eeeeee;
+  color: #222222;
 }
 .alert {
   padding: 15px;
@@ -6842,9 +6842,6 @@ header .navbar .container li a:focus {
   text-align: center;
   margin-top: 50px;
 }
-.saveUpdate {
-  margin-top: 20px;
-}
 /*masonry grid styling*/
 .grid {
   margin: 0 auto;
@@ -6889,6 +6886,16 @@ people-box .panel {
 }
 .modal#message-modal {
   color: #555555;
+}
+.want-button,
+.offer-button {
+  margin-right: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 5px;
+}
+.saveUpdate {
+  margin-top: 20px;
 }
 .linkedinconnect {
   height: 40px;

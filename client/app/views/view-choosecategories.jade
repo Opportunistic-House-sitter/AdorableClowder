@@ -4,15 +4,11 @@ div(ng-controller="subjectsController as subjects")
       .col-lg-12
         h2 I would like to learn about:
         .all-wantsandoffers
-
-          a.animated.bounceIn(href="#" ng-repeat="want in subjects.wants" ng-click="subjects.toggleWant(want)")
-
           a.animated.bounceIn(href="#" ng-repeat="want in subjects.wants" ng-click="subjects.toggleWant(want.skill, want.category)")
-
             span.glyphicon.glyphicon-remove
             | {{want.skill}}
     .row(ng-controller="typeAheadController as taCtrl")
-      .col-md-4(ng-repeat="category in subjects.categories")
+      .col-md-4(ng-repeat="category in subjects.categories" ng-hide="category === 'LinkedIn'")
         h4 {{category}}
         .checkbox(ng-repeat="subject in subjects.sampleCategories[category]")
           label
@@ -39,7 +35,7 @@ div(ng-controller="subjectsController as subjects")
             span.glyphicon.glyphicon-remove
             | {{offer.skill}}
     .row(ng-controller="typeAheadController as taCtrl2")
-      .col-md-4(ng-repeat="category in subjects.categories")
+      .col-md-4(ng-repeat="category in subjects.categories" ng-hide="category === 'LinkedIn'")
         h4 {{category}}
         .checkbox(ng-repeat="subject in subjects.sampleCategories[category]")
           label
