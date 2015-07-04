@@ -1,73 +1,134 @@
 angular.module('skillsCtrl', [])
 
-.controller('skillsController', function (Users, $location, $window) {
+.controller("skillsController", function (Users, $location, $window) {
+    var vm = this;
+    vm.user = {};
+    vm.wants = [];
+    vm.offers = [];
+    vm.wantsSkills = [];
+    vm.offersSkills = [];
+    vm.wantsObj = {};
+    vm.offersObj = {};
 
-  var vm = this;
+    vm.getUser = function () {
+      //using Users factory from factories.js to do GET
+      Users.getUser()
+        .then(function (user) {
+          vm.user = user;
+          vm.wants = vm.user.want;
+          vm.wantsSkills = vm.wants.map(function(item) {
+            return item.skill;
+          });
+           vm.wants.forEach(function(item){
+            if(vm.wantsObj[item.category]){
+              vm.wantsObj[item.category].push(item);
+            } else {
+              vm.wantsObj[item.category] = [];
+              vm.wantsObj[item.category].push(item);
+            }
+          });
+          vm.offers = vm.user.offer;
+          vm.offersSkills = vm.offers.map(function(item) {
+            return item.skill;
+          });
+          console.log(vm.offersSkills);
+          vm.offers.forEach(function(item){
+            if(vm.offersObj[item.category]){
+              vm.offersObj[item.category].push(item);
+            } else {
+              vm.offersObj[item.category] = [];
+              vm.offersObj[item.category].push(item);
+            }
+          });
+        })
+        .catch(function (err) {
+          console.log(err);
+          //if can't get user, redirect to login
+          $location.path('/login');
+        });
+    };
 
-  vm.user = {};
+    vm.getUser();
 
-  vm.getUser = function () {
+    vm.categories = ['Language Learning', 'Technology', 'Sports', 'Knowledge', 'Wild n Wacky', 'Business', 'Craft and Design', 'LinkedIn'];
 
-    //using Users factory from factories.js to do GET
-    Users.getUser()
-      .then(function (user) {
-        vm.user = user;
-      })
-      .catch(function (err) {
-        console.log(err);
-        //if can't get user, redirect to login
-        $location.path('/login');
-      });
-  };
-  vm.getUser();
+    vm.sampleCategories = {
+      'Language Learning': ['Spanish', 'Chinese', 'Esperanto'],
+      'Technology': ['IoT', 'Hacking Facebook', 'Bitcoin'],
+      'Sports': ["Baseball", "Curling", "Cow-tipping"],
+      'Knowledge': ["Art History", "Art Garfunkel History", "History"],
+      'Wild n Wacky': ["Juggling", "Busking", "Moping"],
+      'Business': ["Money Laundering", "Accounting", "Financial Advice"],
+      'Craft and Design': ["Woodworking", "Clay Pottery", "Graphic Design"]
+    };
 
+    vm.hasWant = function(category){
+      return vm.wantsObj[category].length > 0 ? true : false;
+    };
+  
+    vm.hasOffer = function(category){
+      return vm.offersObj[category].length > 0 ? true : false;
+    };
+    
+    // Selects category from dropdown menu and displays the category to submit
+    vm.selectedWantCategory = "category";
+    vm.selectWantCategory = function(category){
+      vm.selectedWantCategory = category;
+    };
 
-// get the list of categories
-  vm.wantCategories = [];
- 	if(vm.user.want !== null){
-	 for(var i = 0; i < vm.user.want.length; i++){
-	 	vm.wantCategories.push(vm.user.want[i].category);
-	 }
-	}
+    vm.selectedOfferCategory = "category";
+    vm.selectOfferCategory = function(category){
+      vm.selectedOfferCategory = category;
+    };
 
-  vm.offerCategories = [];
- 	if(vm.user.offer !== null){
-	 for(var j = 0; j < vm.user.offer.length; j++){
-	 	vm.offerCategories.push(vm.user.offer[j].category);
-	 }
- 	}
+    vm.chooseOffers = false;
 
+   vm.toggleWant = function(want, category) {
+     var index = vm.wantsSkills.indexOf(want.skill);
+     var idx = vm.wantsObj[category].indexOf(want);
+     console.log(idx);
+     if (index > -1 || idx > -1) {
+       vm.wants.splice(index, 1);
+       vm.wantsSkills.splice(index, 1);
+       vm.wantsObj[category].splice(idx, 1);
+     } else {
+       vm.wants.push({skill: want, category: category});
+       vm.wantsSkills.push(want);
+       vm.wantsObj[category].push({skill: want, category: category});
+     }
+   };
 
- // populates the categories drop down.
- // when a category is selected, the button updates
- // to the selected category
- vm.sampleCategories = ["language", "technology", "sports", "knowledge", "wild", "business", "craftanddesign"];
- vm.selectedCategory = "category";
- vm.selectCategory = function(category){
-   vm.selectedCategory = category;
- };
+   console.log(vm.offersSkills);
+   vm.toggleOffer = function(offer, category) {
+     var index = vm.offersSkills.indexOf(offer.skill);
+     var idx = vm.offersObj[category].indexOf(offer);
+     if (index > -1 || idx > -1) {
+       vm.offers.splice(index, 1);
+       vm.offersSkills.splice(index, 1);
+       vm.offersObj[category].splice(idx, 1);
+     } else {
+       vm.offers.push({skill: offer.skill, category: category});
+       vm.offersSkills.push(offer);
+       vm.offersObj[category].push({skill: offer, category: category});
+     }
+   };
 
+    vm.changesSaved = true;
+    vm.changePreferences = function() {
+      vm.changesSaved = false;
+      Users.saveChanges(vm.user)
+        .then(function(responseToken) {
+          console.log(responseToken);
+        })
+        .catch(function(err) {
+          console.log(err);
+          $location.path('/subjects');
+        });
+    };
 
-// Removes or adds a want
-  vm.toggleWant = function(want){
-    console.log("want: ", want);
-    var index = vm.user.want.indexOf(want);
-    if(index > -1){
-      vm.user.want.splice(index, 1);
-    } else {
-      vm.user.want.push(want);
+    // Add categories as keys to the wants and offers objects
+    for(var i = 0; i < vm.categories.length; i++){
+      vm.wantsObj[vm.categories[i]] = [];
+      vm.offersObj[vm.categories[i]] = [];
     }
-  };
-
-  // Removes or adds an offer
-   vm.toggleOffer = function(offer){
-    console.log("toggleOffer called");
-    var index = vm.user.offer.indexOf(offer);
-    if(index > -1){
-      vm.user.offer.splice(index, 1);
-    } else {
-      vm.user.offer.push(offer);
-    }
-  };
-
 });
