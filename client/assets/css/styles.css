@@ -6897,6 +6897,23 @@ people-box .panel {
 .saveUpdate {
   margin-top: 20px;
 }
+<<<<<<< HEAD
+.profile-form {
+  text-align: center;
+}
+.profile-form .email-input {
+  padding-right: 15px;
+  margin-right: 15px;
+  border-right: 1px solid #FFFFFF;
+}
+.profile-form .email-input input {
+  width: 250px;
+}
+.profile-form button {
+  margin-top: 12px;
+  clear: both;
+  width: 70%;
+=======
 .wantoffer-panel {
   background-color: inherit;
   opactiy: 50%;
@@ -6906,4 +6923,5 @@ people-box .panel {
 }
 .wantoffer-input {
   padding: 5px;
+>>>>>>> 4c201cdbc6a95dd8cdc4bb58c9b77b7ac75d4ff9
 }
