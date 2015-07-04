@@ -6897,7 +6897,6 @@ people-box .panel {
 .saveUpdate {
   margin-top: 20px;
 }
-<<<<<<< HEAD
 .linkedinconnect {
   height: 40px;
   width: 235px;
@@ -6981,7 +6980,7 @@ people-box .panel {
 .linkedinsuccess .servererror {
   font-size: 30px;
   font-weight: bold;
-=======
+}
 .wantoffer-panel {
   background-color: inherit;
   opactiy: 50%;
@@ -6991,5 +6990,4 @@ people-box .panel {
 }
 .wantoffer-input {
   padding: 5px;
->>>>>>> 4c201cdbc6a95dd8cdc4bb58c9b77b7ac75d4ff9
 }
