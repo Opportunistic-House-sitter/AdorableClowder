@@ -6897,6 +6897,7 @@ people-box .panel {
 .saveUpdate {
   margin-top: 20px;
 }
+<<<<<<< HEAD
 .profile-form {
   text-align: center;
 }
@@ -6912,4 +6913,15 @@ people-box .panel {
   margin-top: 12px;
   clear: both;
   width: 70%;
+=======
+.wantoffer-panel {
+  background-color: inherit;
+  opactiy: 50%;
+}
+.wantoffer-heading {
+  padding: 7px;
+}
+.wantoffer-input {
+  padding: 5px;
+>>>>>>> 4c201cdbc6a95dd8cdc4bb58c9b77b7ac75d4ff9
 }
