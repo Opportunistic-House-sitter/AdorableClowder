@@ -1,13 +1,18 @@
-<div class="jumbotron text-center animated fadeIn">
+
+<div class="text-center login animated fadeIn">
   <h2>Log in</h2>
+  <h5>Good to see you again - let's Skillit.</h5>
 
   <div ng-controller="loginController as login">
-    <form>
-      Username: <input type="text" ng-model="login.user.username" required />
-      Password: <input type="password" ng-model="login.user.password" required /><br>
+    <a class="linkedinlink" href="http://localhost:1337/auth/linkedin" ng-click="login.setAction()" target="_self" ng-init="imgsrc='./assets/linkedin_nothover.png'" ng-mouseover="imgsrc='./assets/linkedin_hover.png'" ng-mouseout="imgsrc='./assets/linkedin_nothover.png'">
+      <img class="linkedinconnect" ng-src='{{imgsrc}}'>
+    </a>
+    <div class="choiceblock"><div class="blackline"></div><span class="choice"> or </span><div class="blackline"></div></div>
+    <form class="formfields">
+      <input type="text" placeholder="username" ng-model="login.user.username" required /><br>
+      <input type="password" placeholder="password" ng-model="login.user.password" required /><br>
       <input type="submit" class="btn btn-primary buttonMargin" ng-click="login.doLogin()" />
     </form>
     <p class="text-danger">{{login.err}}</p>
-    <a href="http://localhost:1337/auth/linkedin" ng-click="login.setAction()" ngtarget="_self"><img src="./assets/Sign-In-Small---Default.png"></a>
   </div>
 </div>

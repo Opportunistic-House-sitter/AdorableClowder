@@ -36,7 +36,7 @@ angular.module('peopleCtrl', [])
 
   vm.selectWant = function(want) {
     vm.currentWant = want;
-    Users.getUsersBySkill(want, 'offer')
+    Users.getUsersBySkill(want.skill, 'offer')
       .then(function(users) {
         vm.matchedOffers = users;
       })
@@ -49,7 +49,7 @@ angular.module('peopleCtrl', [])
 
   vm.selectOffer = function(offer) {
     vm.currentOffer = offer;
-    Users.getUsersBySkill(offer, 'want')
+    Users.getUsersBySkill(offer.skill, 'want')
         .then(function(users) {
           vm.matchedWants = users;
         })

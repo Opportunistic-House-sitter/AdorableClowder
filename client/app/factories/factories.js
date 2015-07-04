@@ -76,7 +76,7 @@ angular.module('skillitFactories', [])
           headers: {
             'x-access-token': $window.localStorage.getItem('skillitToken')
           },
-          params: { skill: skill.skill, type: type }
+          params: { skill: skill, type: type }
         })
         .then(function (resp) {
           return resp.data;
