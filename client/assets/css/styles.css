@@ -1082,7 +1082,7 @@ body {
   font-family: Raleway, Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
-  color: #222222;
+  color: #eeeeee;
   background-color: #3f2860;
 }
 input,
@@ -2903,7 +2903,7 @@ select[multiple].input-lg {
   display: block;
   margin-top: 5px;
   margin-bottom: 10px;
-  color: #626262;
+  color: #ffffff;
 }
 @media (min-width: 768px) {
   .form-inline .form-group {
@@ -5055,7 +5055,7 @@ a.thumbnail.active {
 }
 .thumbnail .caption {
   padding: 9px;
-  color: #222222;
+  color: #eeeeee;
 }
 .alert {
   padding: 15px;
@@ -6897,6 +6897,7 @@ people-box .panel {
 .saveUpdate {
   margin-top: 20px;
 }
+<<<<<<< HEAD
 .linkedinconnect {
   height: 40px;
   width: 235px;
@@ -6980,4 +6981,15 @@ people-box .panel {
 .linkedinsuccess .servererror {
   font-size: 30px;
   font-weight: bold;
+=======
+.wantoffer-panel {
+  background-color: inherit;
+  opactiy: 50%;
+}
+.wantoffer-heading {
+  padding: 7px;
+}
+.wantoffer-input {
+  padding: 5px;
+>>>>>>> 4c201cdbc6a95dd8cdc4bb58c9b77b7ac75d4ff9
 }
