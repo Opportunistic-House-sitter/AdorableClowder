@@ -31,6 +31,7 @@ angular.module('subjectCtrl', [])
           vm.offersSkills = vm.offers.map(function(item) {
             return item.skill;
           });
+          console.log(vm.offersSkills);
           vm.offers.forEach(function(item){
           	if(vm.offersObj[item.category]){
           		vm.offersObj[item.category].push(item);
@@ -85,6 +86,7 @@ angular.module('subjectCtrl', [])
 	 vm.toggleWant = function(want, category) {
 	   var index = vm.wantsSkills.indexOf(want);
 	   var idx = vm.wantsObj[category].indexOf(want);
+     console.log(idx);
 	   if (index > -1 || idx > -1) {
 	     vm.wants.splice(index, 1);
 	     vm.wantsSkills.splice(index, 1);
@@ -96,6 +98,7 @@ angular.module('subjectCtrl', [])
 	   }
 	 };
 
+   console.log(vm.offersSkills);
 	 vm.toggleOffer = function(offer, category) {
 	   var index = vm.offersSkills.indexOf(offer);
 	   var idx = vm.offersObj[category].indexOf(offer);
@@ -104,7 +107,7 @@ angular.module('subjectCtrl', [])
 	     vm.offersSkills.splice(index, 1);
 	     vm.offersObj[category].splice(idx, 1);
 	   } else {
-	     vm.offers.push({skill: offer, category: category});
+	     vm.offers.push({skill: offer.skill, category: category});
 	     vm.offersSkills.push(offer);
 	     vm.offersObj[category].push({skill: offer, category: category});
 	   }
@@ -113,6 +116,7 @@ angular.module('subjectCtrl', [])
     vm.changesSaved = true;
     vm.changePreferences = function() {
       vm.changesSaved = false;
+      console.log(vm.user);
       Users.saveChanges(vm.user)
         .then(function(responseToken) {
           console.log(responseToken);

@@ -1,18 +1,19 @@
 <div class="animated fadeIn container text-center" ng-controller="subjectsController as subject">
 
-  <h4 ng-hide="subject.changesSaved">Subject preferences saved.</h4>
+
+  <h4 ng-hide="skill.changesSaved">Subject preferences saved.</h4>
 
     <div class="row">
 
     <div class="col-md-6">
-      <form class="form-inline" ng-controller="typeAheadController as taCtrl" ng-submit="subject.toggleWant(customWant, subject.selectedWantCategory)">
+      <form class="form-inline" ng-controller="typeAheadController as taCtrl" ng-submit="skill.toggleWant(customWant, skill.selectedWantCategory)">
         <div class="form-group">
         <input class="wantoffer-input" type="text" ng-model="customWant" typeahead="language for language in taCtrl.allSubjects | filter:$viewValue" placeholder="Add skill to learn">
         </div>
         <div class="form-group btn-group">
-          <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ subject.selectedWantCategory }}<span class="caret"></span></button>
+          <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ skill.selectedWantCategory }}<span class="caret"></span></button>
           <ul class="dropdown-menu">
-            <li><a href="#" ng-repeat="category in subject.categories" ng-click="subject.selectWantCategory(category)">{{ category }}</a></li>
+            <li><a href="#" ng-repeat="category in skill.categories" ng-click="skill.selectWantCategory(category)">{{ category }}</a></li>
           </ul>
         </div>
         <button class="btn btn-danger" type="submit">Add</button>
@@ -20,14 +21,14 @@
     </div>
 
     <div class="col-md-6">
-      <form class="form-inline" ng-controller="typeAheadController as taCtrl2" ng-submit="subject.toggleOffer(customOffer, subject.selectedOfferCategory)">
+      <form class="form-inline" ng-controller="typeAheadController as taCtrl2" ng-submit="skill.toggleOffer(customOffer, skill.selectedOfferCategory)">
         <div class="form-group">
         <input class="wantoffer-input" type="text" ng-model="customOffer" typeahead="language for language in taCtrl2.allSubjects | filter:$viewValue" placeholder="Add skill to teach">
         </div>
         <div class="form-group btn-group">
-          <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ subject.selectedOfferCategory }}<span class="caret"></span></button>
+          <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ skill.selectedOfferCategory }}<span class="caret"></span></button>
           <ul class="dropdown-menu">
-            <li><a href="#" ng-repeat="category in subject.categories" ng-click="subject.selectOfferCategory(category)">{{ category }}</a></li>
+            <li><a href="#" ng-repeat="category in skill.categories" ng-click="skill.selectOfferCategory(category)">{{ category }}</a></li>
           </ul>
         </div>
         <button class="btn btn-danger" type="submit">Add</button>
@@ -39,10 +40,10 @@
 
     <div class="wants col-md-6">
 			<h2>I want to learn:</h2>
-        <div class="panel panel-primary" ng-repeat="category in subject.categories" ng-show="subject.hasWant(category)">
+        <div class="panel panel-primary" ng-repeat="category in skill.categories" ng-show="skill.hasWant(category)">
           <div class="panel-heading wantoffer-heading"><h4 class="panel-title">{{ category }}:</h4></div>
             <div class="panel-body wantoffer-panel">
-              <a class="want-button btn btn-default" href="#" ng-repeat="want in subject.wantsObj[category]" ng-click="subject.toggleWant(want, category)">{{ want.skill }}
+              <a class="want-button btn btn-default" href="#" ng-repeat="want in skill.wantsObj[category]" ng-click="skill.toggleWant(want, category)">{{ want.skill }}
                 <span class="glyphicon glyphicon-remove"></span>
               </a>
             </div>
@@ -51,10 +52,10 @@
 
     <div class="offers col-md-6">
       <h2>I'm offering to teach:</h2>
-        <div class="panel panel-primary" ng-repeat="category in subject.categories" ng-show="subject.hasOffer(category)">
+        <div class="panel panel-primary" ng-repeat="category in skill.categories" ng-show="skill.hasOffer(category)">
           <div class="panel-heading wantoffer-heading"><h4 class="panel-title">{{ category }}:</h4></div>
             <div class="panel-body wantoffer-panel">
-              <a class="offer-button btn btn-default" href="#" ng-repeat="offer in subject.offersObj[category]" ng-click="subject.toggleOffer(offer, category)"> {{ offer.skill }}
+              <a class="offer-button btn btn-default" href="#" ng-repeat="offer in skill.offersObj[category]" ng-click="skill.toggleOffer(offer, category)"> {{ offer.skill }}
                 <span class="glyphicon glyphicon-remove"></span>
               </a>
             </div>
@@ -65,7 +66,7 @@
 
   <div class="row text-center">
     <div class="col-md-4 col-md-offset-8">
-      <button class="saveUpdate btn btn-danger btn-block" ng-click="subject.changePreferences()">Save Updates</button>
+      <button class="saveUpdate btn btn-danger btn-block" ng-click="skill.changePreferences()">Save Updates</button>
     </div>
   </div>
 
