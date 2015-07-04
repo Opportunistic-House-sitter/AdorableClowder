@@ -6911,6 +6911,7 @@ people-box .panel {
 }
 ::-webkit-input-placeholder {
   font-weight: bold;
+  padding-left: 5px;
 }
 .formfields input {
   color: black;
@@ -6953,10 +6954,30 @@ people-box .panel {
 .text-danger {
   margin-top: 10px;
   font-size: 20px;
+  font-weight: bold;
 }
 .blackline {
   height: 2px;
   width: 100px;
   display: inline-block;
   border-bottom: 2px solid #fa8b60;
+}
+.linkedinsuccess {
+  color: #eeeeee;
+}
+.linkedinsuccess .btn {
+  background-color: #fa8b60;
+  border-color: black;
+  color: #eeeeee;
+  width: 235px;
+}
+.linkedinsuccess .btn-default {
+  margin-top: 10px;
+}
+.linkedinsuccess .btn-default:hover {
+  background-color: #f97947;
+}
+.linkedinsuccess .servererror {
+  font-size: 30px;
+  font-weight: bold;
 }

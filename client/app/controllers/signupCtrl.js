@@ -31,7 +31,7 @@
           $location.path('/choosesubjects');
         }
         if(action === 'login'){
-          $location.path('/people');
+          $location.path('/explore');
         }
       })
       .catch(function(err){
