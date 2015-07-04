@@ -6924,6 +6924,9 @@ people-box .panel {
   margin-top: 5px;
   margin-bottom: 5px;
 }
+.login {
+  color: #eeeeee;
+}
 .login .btn {
   background-color: #fa8b60;
 }
@@ -6934,15 +6937,22 @@ people-box .panel {
 .login .btn-primary:hover {
   background-color: #f97947;
 }
+.signup {
+  color: #eeeeee;
+}
 .signup .btn {
   background-color: #fa8b60;
 }
 .signup .btn-primary {
-  border-color: black;
   color: #eeeeee;
+  border-color: black;
 }
 .signup .btn-primary:hover {
   background-color: #f97947;
+}
+.text-danger {
+  margin-top: 10px;
+  font-size: 20px;
 }
 .blackline {
   height: 2px;

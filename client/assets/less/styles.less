@@ -211,6 +211,7 @@ header {
   }
 
   .login{
+    color: @gray-lighter;
     .btn{
       background-color: @orange;
     }
@@ -224,16 +225,22 @@ header {
   }  
 
   .signup{
+    color: @gray-lighter;
     .btn{
       background-color: @orange;
     }
     .btn-primary{
-      border-color:black;
       color: @gray-lighter;
+      border-color:black;
       &:hover {
         background-color: darken(@orange, 5%);
       }
     }
+  }
+
+  .text-danger{
+    margin-top: 10px;
+    font-size: 20px;
   }
 
   .blackline {
