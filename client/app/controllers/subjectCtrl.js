@@ -107,7 +107,7 @@ angular.module('subjectCtrl', [])
 	     vm.offersSkills.splice(index, 1);
 	     vm.offersObj[category].splice(idx, 1);
 	   } else {
-	     vm.offers.push({skill: offer.skill, category: category});
+	     vm.offers.push({skill: offer, category: category});
 	     vm.offersSkills.push(offer);
 	     vm.offersObj[category].push({skill: offer, category: category});
 	   }
