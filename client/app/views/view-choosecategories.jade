@@ -28,10 +28,7 @@ div.animated.fadeIn(ng-controller="subjectsController as subjects")
       .col-lg-12
         h2 I know a lot about:
         .all-wantsandoffers
-          a.animated.bounceIn(href="#" ng-repeat="offer in subjects.offers" ng-click="subjects.toggleOffer(offer)")
-
           a.animated.bounceIn(href="#" ng-repeat="offer in subjects.offers" ng-click="subjects.toggleOffer(offer.skill, offer.category)")
-
             span.glyphicon.glyphicon-remove
             | {{offer.skill}}
     .row(ng-controller="typeAheadController as taCtrl2")

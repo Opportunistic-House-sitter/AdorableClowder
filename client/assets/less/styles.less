@@ -193,6 +193,103 @@ header {
     clear: both;
     width: 70%;
   }
+}
+
+//signup/login
+  .linkedinconnect {
+    height: 40px;
+    width: 235px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    border-radius: 3px;
+    border: 1px solid black;
+  }
+
+  .choice {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  ::-webkit-input-placeholder {
+    font-weight:bold;
+    padding-left: 5px;
+  }
+
+
+  .formfields input{
+    color: black;
+    height: 40px;
+    width: 235px;
+    margin-top: 3px;
+    border-radius: 3px;
+    border: 1px solid black;
+  }
+
+  .choiceblock{
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  .login{
+    color: @gray-lighter;
+    .btn{
+      background-color: @orange;
+    }
+    .btn-primary{
+      border-color:black;
+      color: @gray-lighter;
+      &:hover {
+        background-color: darken(@orange, 5%);
+      }
+    }
+  }
+
+  .signup{
+    color: @gray-lighter;
+    .btn{
+      background-color: @orange;
+    }
+    .btn-primary{
+      color: @gray-lighter;
+      border-color:black;
+      &:hover {
+        background-color: darken(@orange, 5%);
+      }
+    }
+  }
+
+  .text-danger{
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .blackline {
+   height: 2px;
+   width: 100px;
+   display: inline-block;
+   border-bottom: 2px solid @orange;
+  }
+
+  .linkedinsuccess{
+    color: @gray-lighter;
+    .btn{
+      background-color: @orange;
+      border-color: black;
+      color: @gray-lighter;
+      width: 235px;
+    }
+    .btn-default{
+      margin-top: 10px;
+      &:hover {
+        background-color: darken(@orange, 5%);
+      }
+    }
+    .servererror{
+      font-size: 30px;
+      font-weight: bold;
+    }
+  }
 
 .wantoffer-panel {
   background-color: inherit;

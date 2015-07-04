@@ -64,11 +64,11 @@ angular.module('subjectCtrl', [])
     vm.hasWant = function(category){
       return vm.wantsObj[category].length > 0 ? true : false;
     };
-  
+
     vm.hasOffer = function(category){
       return vm.offersObj[category].length > 0 ? true : false;
     };
-    
+
     // Selects category from dropdown menu and displays the category to submit
     vm.selectedWantCategory = "category";
     vm.selectWantCategory = function(category){
@@ -116,6 +116,7 @@ angular.module('subjectCtrl', [])
       Users.saveChanges(vm.user)
         .then(function(responseToken) {
           console.log(responseToken);
+          $location.pash('/people');
         })
         .catch(function(err) {
           console.log(err);

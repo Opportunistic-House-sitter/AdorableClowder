@@ -6897,7 +6897,6 @@ people-box .panel {
 .saveUpdate {
   margin-top: 20px;
 }
-<<<<<<< HEAD
 .profile-form {
   text-align: center;
 }
@@ -6913,7 +6912,91 @@ people-box .panel {
   margin-top: 12px;
   clear: both;
   width: 70%;
-=======
+}
+.linkedinconnect {
+  height: 40px;
+  width: 235px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  border-radius: 3px;
+  border: 1px solid black;
+}
+.choice {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+::-webkit-input-placeholder {
+  font-weight: bold;
+  padding-left: 5px;
+}
+.formfields input {
+  color: black;
+  height: 40px;
+  width: 235px;
+  margin-top: 3px;
+  border-radius: 3px;
+  border: 1px solid black;
+}
+.choiceblock {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.login {
+  color: #eeeeee;
+}
+.login .btn {
+  background-color: #fa8b60;
+}
+.login .btn-primary {
+  border-color: black;
+  color: #eeeeee;
+}
+.login .btn-primary:hover {
+  background-color: #f97947;
+}
+.signup {
+  color: #eeeeee;
+}
+.signup .btn {
+  background-color: #fa8b60;
+}
+.signup .btn-primary {
+  color: #eeeeee;
+  border-color: black;
+}
+.signup .btn-primary:hover {
+  background-color: #f97947;
+}
+.text-danger {
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.blackline {
+  height: 2px;
+  width: 100px;
+  display: inline-block;
+  border-bottom: 2px solid #fa8b60;
+}
+.linkedinsuccess {
+  color: #eeeeee;
+}
+.linkedinsuccess .btn {
+  background-color: #fa8b60;
+  border-color: black;
+  color: #eeeeee;
+  width: 235px;
+}
+.linkedinsuccess .btn-default {
+  margin-top: 10px;
+}
+.linkedinsuccess .btn-default:hover {
+  background-color: #f97947;
+}
+.linkedinsuccess .servererror {
+  font-size: 30px;
+  font-weight: bold;
+}
 .wantoffer-panel {
   background-color: inherit;
   opactiy: 50%;
@@ -6923,5 +7006,4 @@ people-box .panel {
 }
 .wantoffer-input {
   padding: 5px;
->>>>>>> 4c201cdbc6a95dd8cdc4bb58c9b77b7ac75d4ff9
 }
