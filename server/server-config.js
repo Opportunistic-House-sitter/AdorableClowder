@@ -41,7 +41,7 @@ passport.deserializeUser(function(obj, done) {
 passport.use(new LinkedInStrategy({
   consumerKey: "75aj0rlf87gsvn",
   consumerSecret: "xuoU3OlOk7IgMPrs",
-  callbackURL: "http://localhost:1337/auth/linkedin/callback",
+  callbackURL: "https://skillinit.herokuapp.com/auth/linkedin/callback",
   profileFields: ['id', 'first-name', 'last-name', 'email-address','public-profile-url', 'headline']
   },
 
