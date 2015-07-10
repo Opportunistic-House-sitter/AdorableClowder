@@ -10,7 +10,7 @@
   "scripts": {
     "build": "grunt build",
     "start": "node server.js",
-    "post-install": "bower install"
+    "postinstall": "bower install"
   },
   "repository": {
     "type": "git",
